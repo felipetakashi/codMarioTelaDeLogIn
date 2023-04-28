@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login - Super Mario Bros</title>
+        </head>
+        <body>
+            
+
+                <?php
+                if (isset($_POST['username']) && isset($_POST['password'])) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                // Verifica as credenciais
+                if ($username === 'mario' && $password === 'luigi123') {
+                echo 'Login bem-sucedido!';
+                // Redireciona para a página principal do jogo
+                header('Location: https://www.nintendo.com/games/detail/super-mario-bros-switch/');
+                exit;
+                } else {
+                echo 'Credenciais inválidas. Tente novamente.';
+                }
+                }
+                
+                ?>
+            
+
+
+<form method="POST">
+<label for="username">Nome de usuário:</label>
+<input type="text" id="username" name="username"><br><br>
+<label for="password">Senha:</label>
+<input type="password" id="password" name="password"><br><br>
+<button type="submit">Entrar</button>
+</form>
+</body>
+</html>
